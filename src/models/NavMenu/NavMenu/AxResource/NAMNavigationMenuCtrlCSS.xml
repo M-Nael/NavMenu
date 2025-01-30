@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxResource xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>NAMNavigationMenuCtrlCSS</Name>
+	<FileName>NAMNavigationMenuCtrl.css</FileName>
+	<RelativeUriInModelStore>NavMenu\NavMenu\AxResource\ResourceContent\Styles\NAMNavigationMenuCtrl.css</RelativeUriInModelStore>
+	<TypeOfResource>Styles</TypeOfResource>
+</AxResource>

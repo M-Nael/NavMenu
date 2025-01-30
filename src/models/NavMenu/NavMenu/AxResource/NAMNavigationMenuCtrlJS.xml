@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxResource xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>NAMNavigationMenuCtrlJS</Name>
+	<FileName>NAMNavigationMenuCtrl.js</FileName>
+	<RelativeUriInModelStore>NavMenu\NavMenu\AxResource\ResourceContent\Scripts\NAMNavigationMenuCtrl.js</RelativeUriInModelStore>
+	<TypeOfResource>Scripts</TypeOfResource>
+</AxResource>

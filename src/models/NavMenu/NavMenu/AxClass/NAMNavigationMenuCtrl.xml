@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>NAMNavigationMenuCtrl</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[FormControlAttribute("NAMNavigationMenuCtrl","",classstr(NAMNavigationMenuCtrlBuild))]
+public class NAMNavigationMenuCtrl extends FormTemplateContainerControl
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>new</Name>
+				<Source><![CDATA[
+    protected void new(FormBuildControl _build, FormRun _formRun)
+    {
+        super(_build, _formRun);
+        this.setResourceBundleName("/resources/html/NAMNavigationMenuCtrl");
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

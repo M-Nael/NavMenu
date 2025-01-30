@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/models/NavMenu/bin
+/.vs
+/src/models/NavMenu/XppMetadata/NavMenu/AxClass
+/src/models/NavMenu/BuildProjectResult.err.xml
+/src/models/NavMenu/BuildProjectResult.log
+/src/models/NavMenu/BuildProjectResult.xml
+/src/models/NavMenuTest/bin
+/src/models/NavMenuTest/XppMetadata/NavMenuTest/AxForm
+/src/models/NavMenuTest/BuildProjectResult.log
+/src/models/NavMenuTest/BuildProjectResult.xml
+/src/projects/NavigationMenu/.vs/NavigationMenu
+/src/projects/NavigationMenu/NavigationMenu/obj/Debug
+/src/projects/NavigationMenu/NavigationMenuTest/obj/Debug

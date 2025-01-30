@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>NavMenu</Model>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <DeployOnline>False</DeployOnline>
+    <ProjectGuid>{bd568e34-f596-47a8-ae3c-f95471d5fd33}</ProjectGuid>
+    <Name>NavigationMenu</Name>
+    <RootNamespace>NavigationMenu</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>False</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxClass\NAMNavigationMenuCtrl">
+      <SubType>Content</SubType>
+      <Name>NAMNavigationMenuCtrl</Name>
+      <Link>Classes\NAMNavigationMenuCtrl</Link>
+    </Content>
+    <Content Include="AxClass\NAMNavigationMenuCtrlBuild">
+      <SubType>Content</SubType>
+      <Name>NAMNavigationMenuCtrlBuild</Name>
+      <Link>Classes\NAMNavigationMenuCtrlBuild</Link>
+    </Content>
+    <Content Include="AxResource\NAMNavigationMenuCtrlCSS">
+      <SubType>Content</SubType>
+      <Name>NAMNavigationMenuCtrlCSS</Name>
+      <Link>Resources\NAMNavigationMenuCtrlCSS</Link>
+    </Content>
+    <Content Include="AxResource\NAMNavigationMenuCtrlHTM">
+      <SubType>Content</SubType>
+      <Name>NAMNavigationMenuCtrlHTM</Name>
+      <Link>Resources\NAMNavigationMenuCtrlHTM</Link>
+    </Content>
+    <Content Include="AxResource\NAMNavigationMenuCtrlJS">
+      <SubType>Content</SubType>
+      <Name>NAMNavigationMenuCtrlJS</Name>
+      <Link>Resources\NAMNavigationMenuCtrlJS</Link>
+    </Content>
+    <Content Include="NAMNavigationMenuCtrl.css">
+      <SubType>Content</SubType>
+      <Name>NAMNavigationMenuCtrl.css</Name>
+      <DependentUpon>AxResource\NAMNavigationMenuCtrlCSS</DependentUpon>
+    </Content>
+    <Content Include="NAMNavigationMenuCtrl.htm">
+      <SubType>Content</SubType>
+      <Name>NAMNavigationMenuCtrl.htm</Name>
+      <DependentUpon>AxResource\NAMNavigationMenuCtrlHTM</DependentUpon>
+    </Content>
+    <Content Include="NAMNavigationMenuCtrl.js">
+      <SubType>Content</SubType>
+      <Name>NAMNavigationMenuCtrl.js</Name>
+      <DependentUpon>AxResource\NAMNavigationMenuCtrlJS</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.17.0.targets" />
+</Project>
