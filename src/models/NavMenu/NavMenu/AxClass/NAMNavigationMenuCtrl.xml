@@ -6,6 +6,8 @@
 [FormControlAttribute("NAMNavigationMenuCtrl","",classstr(NAMNavigationMenuCtrlBuild))]
 public class NAMNavigationMenuCtrl extends FormTemplateContainerControl
 {
+    private FormProperty m_dtSendCommandToJavaScript;
+
 }
 ]]></Declaration>
 		<Methods>
@@ -16,6 +18,21 @@ public class NAMNavigationMenuCtrl extends FormTemplateContainerControl
     {
         super(_build, _formRun);
         this.setResourceBundleName("/resources/html/NAMNavigationMenuCtrl");
+        m_dtSendCommandToJavaScript = this.addProperty(methodstr(NAMNavigationMenuCtrl, SendCommandToJavaScript), 
+                                                       Types::UtcDateTime);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>SendCommandToJavaScript</Name>
+				<Source><![CDATA[
+    [FormPropertyAttribute(FormPropertyKind::Value, "SendCommandToJavaScript")]
+    public utcdatetime SendCommandToJavaScript(utcdatetime _dtValue = m_dtSendCommandToJavaScript.parmValue())
+    {
+        _dtValue = DateTimeUtil::getSystemDateTime();
+        m_dtSendCommandToJavaScript.setValueOrBinding(_dtValue);
+        return m_dtSendCommandToJavaScript.parmValue();
     }
 
 ]]></Source>

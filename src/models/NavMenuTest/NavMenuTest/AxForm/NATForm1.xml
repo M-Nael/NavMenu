@@ -14,7 +14,29 @@ public class NATForm1 extends FormRun
 			</Method>
 		</Methods>
 		<DataSources xmlns="" />
-		<DataControls xmlns="" />
+		<DataControls xmlns="">
+			<Control>
+				<Name>FormButtonControl1</Name>
+				<Type>Button</Type>
+				<Methods>
+					<Method>
+						<Name>clicked</Name>
+						<Source><![CDATA[
+        /// <summary>
+        ///
+        /// </summary>
+        public void clicked()
+        {
+            super();
+            
+            NAMNavigationMenuCtrl1.SendCommandToJavaScript();
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+		</DataControls>
 		<Members xmlns="" />
 	</SourceCode>
 	<DataSources />
@@ -23,13 +45,26 @@ public class NATForm1 extends FormRun
 			<AxFormControl xmlns=""
 				i:type="AxFormContainerControl">
 				<Name>NAMNavigationMenuCtrl1</Name>
+				<AutoDeclaration>Yes</AutoDeclaration>
+				<Height>500</Height>
+				<HeightMode>Manual</HeightMode>
 				<Type>Container</Type>
+				<Width>1500</Width>
+				<WidthMode>Manual</WidthMode>
 				<FormControlExtension>
 					<Name>NAMNavigationMenuCtrl</Name>
 					<ExtensionComponents />
 					<ExtensionProperties />
 				</FormControlExtension>
 				<Controls />
+			</AxFormControl>
+			<AxFormControl xmlns=""
+				i:type="AxFormButtonControl">
+				<Name>FormButtonControl1</Name>
+				<Type>Button</Type>
+				<FormControlExtension
+					i:nil="true" />
+				<Text>Click Me</Text>
 			</AxFormControl>
 		</Controls>
 	</Design>
