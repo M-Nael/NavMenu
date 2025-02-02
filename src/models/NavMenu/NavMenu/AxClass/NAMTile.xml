@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>NAMTile</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[DataContractAttribute]
+public class NAMTile extends FormDataContract
+{
+    FormProperty m_iTop;
+    FormProperty m_iLeft;
+    FormProperty m_iTileType;
+    FormProperty m_sCaption;
+    FormProperty m_sMenu;
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>new</Name>
+				<Source><![CDATA[
+    public void new()
+    {
+        super();
+        m_iTop = this.properties().addProperty(methodStr(NAMTile, Top), Types::Integer);
+        m_iLeft = this.properties().addProperty(methodStr(NAMTile, Left), Types::Integer);
+        m_iTileType = this.properties().addProperty(methodStr(NAMTile, TileType), Types::Integer);
+        m_sCaption = this.properties().addProperty(methodStr(NAMTile, Caption), Types::String);
+        m_sMenu = this.properties().addProperty(methodStr(NAMTile, Menu), Types::String);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Top</Name>
+				<Source><![CDATA[
+    [DataMemberAttribute("Top")]
+    public int Top(int _value = m_iTop.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_iTop.parmValue(_value);
+        }
+        return _value;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Left</Name>
+				<Source><![CDATA[
+    [DataMemberAttribute("Left")]
+    public int Left(int _value = m_iLeft.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_iLeft.parmValue(_value);
+        }
+        return _value;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>TileType</Name>
+				<Source><![CDATA[
+    [DataMemberAttribute("TileType")]
+    public int TileType(int _value = m_iTileType.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_iTileType.parmValue(_value);
+        }
+        return _value;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Caption</Name>
+				<Source><![CDATA[
+    [DataMemberAttribute("Caption")]
+    public str Caption(str _value = m_sCaption.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_sCaption.parmValue(_value);
+        }
+        return _value;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Menu</Name>
+				<Source><![CDATA[
+    [DataMemberAttribute("Menu")]
+    public str Menu(str _value = m_sMenu.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_sMenu.parmValue(_value);
+        }
+        return _value;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

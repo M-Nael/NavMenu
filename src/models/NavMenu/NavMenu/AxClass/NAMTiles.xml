@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>NAMTiles</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[DataContractAttribute]
+public class NAMTiles extends FormDataContract
+{
+    FormProperty m_oTileList;
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>new</Name>
+				<Source><![CDATA[
+    public void new()
+    {
+        super();
+        m_oTileList = this.properties().addProperty(methodStr(NAMTiles, TileList), Types::Class);
+        m_oTileList.parmValue(new List(Types::Class));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>TileList</Name>
+				<Source><![CDATA[
+    [DataMemberAttribute('TileList'), DataCollectionAttribute(Types::Class, classStr(NAMTile))]
+    public List TileList(List _value = m_oTileList.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_oTileList.parmValue(_value);
+        }
+        return _value;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

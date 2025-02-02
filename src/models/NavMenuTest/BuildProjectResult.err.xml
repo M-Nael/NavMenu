@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Diagnostics
+  GenerationTime="2025-02-02T13:04:36.6743397+00:00">
+  <Items>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>19</Line>
+      <Column>9</Column>
+      <EndLine>19</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>28</Line>
+      <Column>9</Column>
+      <EndLine>28</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>37</Line>
+      <Column>9</Column>
+      <EndLine>37</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>46</Line>
+      <Column>9</Column>
+      <EndLine>46</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>55</Line>
+      <Column>9</Column>
+      <EndLine>55</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>64</Line>
+      <Column>9</Column>
+      <EndLine>64</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>73</Line>
+      <Column>9</Column>
+      <EndLine>73</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>83</Line>
+      <Column>9</Column>
+      <EndLine>83</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>92</Line>
+      <Column>9</Column>
+      <EndLine>92</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>101</Line>
+      <Column>9</Column>
+      <EndLine>101</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>110</Line>
+      <Column>9</Column>
+      <EndLine>110</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>119</Line>
+      <Column>9</Column>
+      <EndLine>119</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Form/NATForm1/Method/init</Path>
+      <ElementType>Form Method</ElementType>
+      <Moniker>ClassDoesNotContainMethod</Moniker>
+      <Line>128</Line>
+      <Column>9</Column>
+      <EndLine>128</EndLine>
+      <EndColumn>39</EndColumn>
+      <Message>ClassDoesNotContainMethod: Control 'NAMNavigationMenuCtrl1' does not contain a definition for method 'Tiles' and no extension method 'Tiles' accepting a first argument of type 'NAMNavigationMenuCtrl1' is found on any extension class.</Message>
+      <ItemSpecific>
+        <OriginatorType
+          alias="0">ClassDoesNotContainMethod</OriginatorType>
+        <Fields>
+          <elementTypeName>Control</elementTypeName>
+          <elementName>NAMNavigationMenuCtrl1</elementName>
+          <methodName>Tiles</methodName>
+        </Fields>
+      </ItemSpecific>
+    </Diagnostic>
+  </Items>
+  <Aliases>
+    <Alias
+      assembly="Microsoft.Dynamics.AX.Framework.Xlnt.XppParser.Pass2, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+      ns="Microsoft.Dynamics.AX.Framework.Xlnt.XppParser.Pass2">0</Alias>
+  </Aliases>
+</Diagnostics>
