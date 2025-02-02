@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)https://atlantic-oak.com/Articles/Extensible-Controls-in-Dynamics-365-for-Finance-and-Operations-Tutorial -->
+<html class="wide wow-animation desktop landscape rd-navbar-static-linked" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="origin-trial" content="A/kargTFyk8MR5ueravczef/wIlTkbVk1qXQesp39nV+xNECPdLBVeYffxrM8TmZT6RArWGQVCJ0LRivD7glcAUAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZzIiLCJleHBpcnkiOjE3NDIzNDIzOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <title>Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)</title>
+        <meta property="og:type" content="article">
+        <meta property="og:site_name" content="Atlantic Oak LLC - Microsoft Dynamics 365 Partner">
+        <meta property="og:url" content="https://www.atlantic-oak.com/Articles/Extensible-Controls-in-Dynamics-365-for-Finance-and-Operations-Tutorial">
+        <meta property="og:title" content="Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)">
+        <meta property="og:description" content="A complete tutorial on how to write Extensible Controls for Dynamics 365 for Finance and Operations.">
+            <meta property="og:image" content="https://atloak1.blob.core.windows.net/article-19/Extensible Controls D365 for Finance and Operations.jpg">
+            <meta name="description" content="How to write Extensible Controls for Dynamics 365 for Finance and Operations.">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <script type="text/javascript" async="" charset="utf-8" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/recaptcha__en.js.download" crossorigin="anonymous" integrity="sha384-jf2mERW8WH2M+UziYJqb5zn6+3s50s+HOV/YWiSQE0QCWluCff6yMvvBynKl9zaL"></script><script src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/api.js.download"></script>
+    <link rel="icon" href="https://atloak1.blob.core.windows.net/sb-images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/css">
+    <link href="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/css(1)" rel="stylesheet">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics --><script async="" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/js"></script><script>window.dataLayer = window.dataLayer || [];function gtag() { dataLayer.push(arguments); }gtag('js', new Date());gtag('config', 'G-SNCGMH9MGB');</script>
+
+
+    <!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="https://atloak1.blob.core.windows.net/sb-images/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="js/html5shiv.min.js"> </script>
+        <![endif]-->
+    <style>
+        .server-textTitle-385 {
+            font-family: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-size: 18px;
+            font-weight: 600;
+            color: #323130;
+            display: inline;
+            moz-osx-font-smoothing: grayscale;
+            webkit-font-smoothing: antialiased;
+            line-height: 51px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class=" rd-navbar-static-smooth">
+    <div class="page">
+        <div class="page-loader page-loader-variant-1 loaded">
+            <div>
+                <a class="brand brand-md" href="https://atlantic-oak.com/"><img src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/atloak_logo_all_white.svg" width="150" height="150" alt="Atlantic Oak"></a>
+                <div class="page-loader-body">
+                    <div id="spinningSquaresG">
+                        <div class="spinningSquaresG" id="spinningSquaresG_1"></div>
+                        <div class="spinningSquaresG" id="spinningSquaresG_2"></div>
+                        <div class="spinningSquaresG" id="spinningSquaresG_3"></div>
+                        <div class="spinningSquaresG" id="spinningSquaresG_4"></div>
+                        <div class="spinningSquaresG" id="spinningSquaresG_5"> </div>
+                        <div class="spinningSquaresG" id="spinningSquaresG_6"></div>
+                        <div class="spinningSquaresG" id="spinningSquaresG_7"></div>
+                        <div class="spinningSquaresG" id="spinningSquaresG_8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="page-head">
+            <div class="rd-navbar-wrap" style="height: 172.167px;">
+                <nav class="rd-navbar rd-navbar-default rd-navbar-original rd-navbar-static rd-navbar--is-stuck" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-stick-up-clone="false" data-body-class="rd-navbar-static-smooth" data-md-stick-up="true" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true" data-md-stick-up-offset="60px" data-lg-stick-up-offset="60px" data-xl-stick-up-offset="60px" data-xxl-stick-up-offset="60px">
+                    <div class="rd-navbar-inner">
+                        <div class="rd-navbar-panel">
+                            <button class="rd-navbar-toggle" data-custom-toggle=".rd-navbar-nav-wrap" data-custom-toggle-disable-on-blur="true"><span></span></button><a class="rd-navbar-brand brand" href="https://atlantic-oak.com/"><img src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/atloak_logo_standard.svg" width="100" alt="Atlantic Oak"></a>
+                        </div>
+                        <div class="rd-navbar-group rd-navbar-search-wrap toggle-original-elements">
+                            <div class="rd-navbar-nav-wrap">
+                                <div class="rd-navbar-nav-inner">
+                                    <div class="rd-navbar-search toggle-original-elements">
+                                        <form class="rd-search" action="https://atlantic-oak.com/Home/Search" method="GET" data-search-live="rd-search-results-live">
+                                            <div class="form-wrap">
+                                                <label class="form-label rd-input-label" for="rd-search-form-input">Search...</label>
+                                                <input class="form-input" id="rd-search-form-input" type="text" name="SearchText" autocomplete="off">
+                                                <div class="rd-search-results-live cleared" id="rd-search-results-live"></div>
+                                            </div>
+                                            <button class="rd-search-submit" type="submit"></button>
+                                        </form>
+                                        <button class="rd-navbar-search-toggle toggle-original" data-rd-navbar-toggle=".rd-navbar-search, .rd-navbar-search-wrap"></button>
+                                    </div>
+                                    <ul class="rd-navbar-nav">
+                                        <li class="active">
+                                            <a href="https://atlantic-oak.com/">Home</a>
+                                        </li>
+                                        <li class="rd-navbar--has-megamenu rd-navbar-submenu">
+                                            <a href="https://atlantic-oak.com/Articles/Extensible-Controls-in-Dynamics-365-for-Finance-and-Operations-Tutorial#">Products</a><span class="rd-navbar-submenu-toggle"></span>
+                                            <ul class="rd-navbar-megamenu rd-navbar-open-right">
+                                                <li>
+                                                    <h5 class="rd-megamenu-header">Products</h5>
+                                                    <ul class="rd-navbar-list">
+                                                        <li><a href="https://atlantic-oak.com/Products/D365FO_Cordova_TFVC">Cordova - Fast and Easy D365F&amp;O TFVC DevOps</a></li>
+                                                        <li><a href="https://atlantic-oak.com/Products/D365FO_Document_Exchange_System">Ariene Document Exchange System</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="rd-navbar--has-megamenu rd-navbar-submenu">
+                                            <a href="https://atlantic-oak.com/Articles/Extensible-Controls-in-Dynamics-365-for-Finance-and-Operations-Tutorial#">Downloads</a><span class="rd-navbar-submenu-toggle"></span>
+                                            <ul class="rd-navbar-megamenu rd-navbar-open-right">
+                                                <li>
+                                                    <h5 class="rd-megamenu-header">Downloads</h5>
+                                                    <ul class="rd-navbar-list">
+                                                        <li><a href="https://atlantic-oak.com/Downloads/D365FO_Cordova_TFVC">Cordova - Fast and Easy D365F&amp;O TFVC DevOps</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="rd-navbar--has-megamenu rd-navbar-submenu">
+                                            <a href="https://atlantic-oak.com/Articles/Extensible-Controls-in-Dynamics-365-for-Finance-and-Operations-Tutorial#">Support</a><span class="rd-navbar-submenu-toggle"></span>
+                                            <ul class="rd-navbar-megamenu rd-navbar-open-right">
+                                                <li>
+                                                    <h5 class="rd-megamenu-header">Documentation</h5>
+                                                    <ul class="rd-navbar-list">
+                                                        <li><a href="https://atlantic-oak.com/Documentation/D365FO_Cordova_TFVC">Cordova - Fast and Easy D365F&amp;O TFVC DevOps</a></li>
+                                                        <li><a href="https://atlantic-oak.com/Documentation/D365FO_Document_Exchange_System">Ariene Document Exchange System</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <h5 class="rd-megamenu-header">Support</h5>
+                                                    <ul class="rd-navbar-list">
+                                                        <li><a href="https://atlantic-oak.com/Support/D365FO_Cordova_TFVC">Cordova - Fast and Easy D365F&amp;O TFVC DevOps</a></li>
+                                                        <li><a href="https://atlantic-oak.com/Support/D365FO_Document_Exchange_System">Ariene Document Exchange System</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="rd-navbar--has-megamenu rd-navbar-submenu">
+                                            <a href="https://atlantic-oak.com/Articles/Extensible-Controls-in-Dynamics-365-for-Finance-and-Operations-Tutorial#">Sales</a><span class="rd-navbar-submenu-toggle"></span>
+                                            <ul class="rd-navbar-megamenu rd-navbar-open-right">
+                                                <li>
+                                                    <h5 class="rd-megamenu-header">Sales</h5>
+                                                    <ul class="rd-navbar-list">
+                                                        <li><a href="https://atlantic-oak.com/Sales/D365FO_Cordova_TFVC">Cordova - Fast and Easy D365F&amp;O TFVC DevOps</a></li>
+                                                        <li><a href="https://atlantic-oak.com/Sales/D365FO_Document_Exchange_System">Ariene Document Exchange System</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="https://atlantic-oak.com/About">About Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://atlantic-oak.com/Contact">Contact Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://atlantic-oak.com/Blog">Blog</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rd-navbar-shop"><a class="novi-icon link-shop fa-user" href="https://atlantic-oak.com/Customer/Index"></a></div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        
+
+
+
+
+<section class="section section-60 section-md-75 section-xl-90">
+    <div class="container">
+        <div class="row row-50">
+            <div class="col-lg-8 col-xl-9">
+                <article class="post post-single">
+                    <div class="post-header">
+                        <h4>Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)</h4>
+                    </div>
+                    <div class="post-meta">
+                        <ul class="list-bordered-horizontal">
+                            <li>
+                                <dl class="list-terms-inline">
+                                    <dt>Date</dt>
+                                    <dd>
+                                        <time datetime="2016-01-22">Friday, September 8, 2017</time>
+                                    </dd>
+                                </dl>
+                            </li>
+                                <li>
+                                    <dl class="list-terms-inline">
+                                        <dt>Posted by</dt>
+                                        <dd>Julio Luzardo</dd>
+                                    </dl>
+                                </li>
+
+                        </ul>
+                    </div>
+                    <div class="divider-fullwidth bg-gray-light"></div>
+                    <div class="post-body">
+                        <!--comment-->
+<p>
+    In Dynamics 365 for Finance and Operations (D365) Extensible Controls take on the role of the Managed Host Control of AX 2012. In AX 2012 the Managed Host Control could either be a Windows Forms Control or a WPF control. In its simplest form in D365 an Extensible Control is a piece of HTML with JavaScript functionality.
+</p>
+<p>
+    Although at first it might seem that Extensible Controls cannot carry out many of the tasks of Managed Host Controls and that Extensible Controls are limited, let me assure you that it isn't the case. From a UX perspective, HTML5 coupled with JavaScript can do anything that a WF or WPF control can do. It can even outperform them. Given the fact that HTML5 and JavaScript are present in so many devices, and in so many different platforms, it is beyond doubt the user interface language of choice by today's standards.
+</p>
+<p>
+    Now having said that, developing Extensible Controls is much more complicated than writing WF or WPF controls. In this tutorial, we will try to demystify that complexity. To understand this tutorial you must have a basic knowledge of HTML, CSS, JavaScript, JQuery and X++.
+</p>
+<p>
+	<img src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0290.PNG" alt="" unselectable="on"><br>
+</p>
+<p>
+    We are going to build an interactive tile navigation menu that you can include in any form. It will have some tiles that when clicked will take the user to another form. The tiles will have two sizes and the user will be able to change the background color of the control. This tutorial does not include data binding and will not involve the build class.
+</p>
+<p>
+	<b>At the end of this tutorial you will know:</b>
+</p>
+<ul>
+	<li>How to trigger an action in JavaScript from X++. A user presses a button on the form and the control displays a message box.</li>
+	<li>How to use properties and the observable pattern. A user selects a color from a drop-down and changes the background color for the control.</li>
+	<li>How to use a method to load data into the control using JSON. Tile information such as position, size, caption and display menu item are loaded from X++ during run time.</li>
+	<li>How to use a method to trigger an action in X++ that originates in JavaScript. A user clicks on a tile in the control and gets redirected to the corresponding D365 for Finance and Operations page via the associated Display Menu Item for the tile.</li>
+</ul>
+<p>
+	<b>Control Physical Structure</b>
+</p>
+<p>
+    An Extensible Control is made up of five files:
+</p>
+<ul>
+	<li>An X++ build class. Which houses the control's design time properties menu. We won't go into this class in this tutorial.</li>
+	<li>An X++ runtime class. Which contains properties and methods which we can call from JavaScript or from X++.</li>
+	<li>An HTML resource file.</li>
+	<li>A JavaScript resource file.</li>
+	<li>A CSS resource file. Optional.</li>
+</ul>
+<p>
+	<b>Create the Basic Extensible Control Project Structure</b>
+</p>
+<p>
+    1. Create a new model called NavMenu in a new package and make it reference Application Foundation and Application Platform.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0001A.png" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<hr>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0002A.png" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<hr>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0003A.png" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<hr>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0004A.png" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    2. Create a new operations project. Call this new project "NavigationMenu".
+	<br>
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0010A.png" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    3. Change the project's model to NavMenu. Right click on the project in solution explorer and click properties.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0015.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    4. Right click on your computer's desktop then "New -&gt; Text Document" three times.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0020.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    5. Rename the three files to:
+</p>
+<p>
+    NAMNavigationMenuCtrl.htm
+</p>
+<p>
+    NAMNavigationMenuCtrl.js
+</p>
+<p>
+    NAMNavigationMenuCtrl.css
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0030.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    6. Create a resource called NAMNavigationMenuCtrlHTM and select the NAMNavigationMenuCtrl.htm file from the desktop into it.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0040.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    7. Create a resource called NAMNavigationMenuCtrlJS and select the NAMNavigationMenuCtrl.js file from the desktop into it.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0050.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    8. Create a resource called NAMNavigationMenuCtrlCSS and select the NAMNavigationMenuCtrl.css file from the desktop into it.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0060.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    9. Create a class called NAMNavigationMenuCtrl.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0070.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    10. Create a class called NAMNavigationMenuCtrlBuild.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0080.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    11. You should now have the following project structure:
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0090.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    12. In the NAMNavigationMenuCtrl class include the following code:
+</p>
+<pre>[FormControlAttribute("NAMNavigationMenuCtrl","",classstr(NAMNavigationMenuCtrlBuild))]
+class NAMNavigationMenuCtrl extends FormTemplateContainerControl
+{
+    protected void new(FormBuildControl _build, FormRun _formRun)
+    {
+        super(_build, _formRun);
+        this.setResourceBundleName("/resources/html/NAMNavigationMenuCtrl");
+    }
+}
+</pre>
+<p>
+    13. In the NAMNavigationMenuCtrlBuild class include the following code:
+</p>
+<pre>[FormDesignControlAttribute("NAMNavigationMenuCtrl")]
+class NAMNavigationMenuCtrlBuild extends FormBuildContainerControl
+{
+}
+</pre>
+<p>
+    14. In the NAMNavigationMenuCtrl.htm file include the following markup:
+</p>
+<pre>&lt;script src="/resources/scripts/NAMNavigationMenuCtrl.js"&gt;&lt;/script&gt;
+&lt;link href="/resources/styles/NAMNavigationMenuCtrl.css" rel="stylesheet" type="text/css" /&gt;
+&lt;div id="NAMNavigationMenuCtrl" data-dyn-bind="sizing: { height: $data.Height, width: $data.Width }, visible: $data.Visible"&gt;
+    &lt;p&gt;This is the NAMNavigationMenuCtrl&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+<p>
+    15. In the NAMNavigationMenuCtrl.js file include the following code:
+</p>
+<pre>(function () {
+    'use strict';
+    $dyn.ui.defaults.NAMNavigationMenuCtrl = {};
+    $dyn.controls.NAMNavigationMenuCtrl = function (data, element) {
+        var self = this;
+        $dyn.ui.Control.apply(self, arguments);
+        $dyn.ui.applyDefaults(self, data, $dyn.ui.defaults.NAMNavigationMenuCtrl);
+    }
+    $dyn.controls.NAMNavigationMenuCtrl.prototype = $dyn.extendPrototype($dyn.ui.Control.prototype, {});
+})();
+</pre>
+<p>
+    16. We will add styles to the NAMNavigationMenuCtrl.css file later.
+</p>
+<p>
+    17. Build the solution.
+</p>
+<p>
+    18. Create a model called NavMenuTest in a new package and make it reference the Application Platform, Application Suite and NavMenu models.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0100.PNG" alt="Create new model Dynamics 365 for Finance and Operations Step 1" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<hr>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0110.PNG" alt="Create new model Dynamics 365 for Finance and Operations Step 2" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<hr>
+<p>
+	<br>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0120.PNG" alt="Create new model Dynamics 365 for Finance and Operations Step 3" unselectable="on" style="width:100%;max-width:300px">
+</p>
+<hr>
+<p>
+	<br>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0130.PNG" alt="Create new model Dynamics 365 for Finance and Operations Step 4" unselectable="on" style="width:100%;max-width:300px">
+</p>
+<hr>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0140.PNG" alt="Create new model Dynamics 365 for Finance and Operations Step 5" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    19. Create a new project in the same solution called NavigationMenuTest, right click on this project select properties and change the model to NavMenuTest.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0150.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    20. Add a new form to the NavigationMenuTest project and call it NATForm1.
+</p>
+<p>
+    21. Make NavigationMenuTest the startup project and NATForm1 the startup object.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0152.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<hr>
+<p>
+	<br>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0154.PNG" alt="" unselectable="on" style="width:100%;max-width:300px">
+</p>
+<p>
+    22. Open the NATForm1 form, right click on design and select the NAMNavigationMenuCtrl.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0160.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    23. Start debugging. You should see the caption of the Form "NATForm1" with the control underneath "This is the NAMNavigationMenuCtrl". The caption for the control comes from the htm file.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0170.PNG" alt="" unselectable="on"><br>
+</p>
+<p>
+    And this is all it takes to have a simple Dynamics 365 for Finance and Operations Extensible Control "hello world". Now we're going to look at the element object in JavaScript.
+</p>
+<p>
+    The element object gets passed as a parameter in the main function in JavaScript:
+</p>
+<pre>    $dyn.controls.NAMNavigationMenuCtrl = function (data, element) {
+        …
+    }
+</pre>
+<p>
+    The element object represents the main div of the control in HTML:
+</p>
+<pre>&lt;div id="NAMNavigationMenuCtrl" data-dyn-bind="sizing: { height: $data.Height, width: $data.Width }, visible: $data.Visible"&gt;
+    …
+&lt;/div&gt;
+</pre>
+<p>
+    So we can use JQuery to modify the element object and in consequence the main div. We will include the following line of code into our JavaScript:
+</p>
+<pre>$(element).css("background-color", "yellow");
+</pre>
+<p>
+    Complete .js code:
+</p>
+<pre>(function () {
+    'use strict';
+    $dyn.ui.defaults.NAMNavigationMenuCtrl = {};
+    $dyn.controls.NAMNavigationMenuCtrl = function (data, element) {
+        var self = this;
+        $dyn.ui.Control.apply(self, arguments);
+        $dyn.ui.applyDefaults(self, data, $dyn.ui.defaults.NAMNavigationMenuCtrl);
+        $(element).css("background-color", "yellow");
+    }
+    $dyn.controls.NAMNavigationMenuCtrl.prototype = $dyn.extendPrototype($dyn.ui.Control.prototype, {});
+})();
+</pre>
+<p>
+    Press F5 or Debug -&gt; Start Debugging and you will notice that the div's background will be changed to yellow:
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0180.PNG" alt="" unselectable="on"><br>
+</p>
+<p>
+    In the div we have the data-dyn-bind attribute:
+</p>
+<pre>&lt;div … data-dyn-bind="sizing: { height: $data.Height, width: $data.Width }, visible: $data.Visible"&gt;
+</pre>
+<p>
+    This binding handler attribute maps to the property sheet of the extensible control and the height, width and visible properties:
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0190.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    To test this, we're going to set the height and width properties manually:
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0200.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    We're setting it to 1500x500 pixels, when we run the form again, this is the result:
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0210.PNG" alt="" unselectable="on"><br>
+</p>
+<p>
+	<b><a name="XInteraction">X++ Interaction</a></b>
+</p>
+<p>
+    The JavaScript inside the control can receive instructions from X++. The JavaScript can also send instructions to X++ and in this operation, receive JSON data from X++. It's a two-way street.
+</p>
+<p>
+    To demonstrate sending commands from X++ to JavaScript we're going to add code to the X++ runtime class (NAMNavigationMenuCtrl) and to JavaScript. The objective is that when a user clicks a button in the NATForm1 form a message box is displayed by the control.
+</p>
+<p>
+    1. Add this class level variable to the NAMNavigationMenuCtrl class:
+</p>
+<pre>private FormProperty m_dtSendCommandToJavaScript;
+</pre>
+<p>
+    2. In the NAMNavigationMenuCtrl class constructor initialize the variable:
+</p>
+<pre>m_dtSendCommandToJavaScript = this.addProperty(methodstr(NAMNavigationMenuCtrl, SendCommandToJavaScript), Types::UtcDateTime);
+</pre>
+<p>
+    3. Add this getter/setter to the NAMNavigationMenuCtrl:
+</p>
+<pre>    [FormPropertyAttribute(FormPropertyKind::Value, "SendCommandToJavaScript")]
+    public utcdatetime SendCommandToJavaScript(utcdatetime _dtValue = m_dtSendCommandToJavaScript.parmValue())
+    {
+        _dtValue = DateTimeUtil::getSystemDateTime();
+        m_dtSendCommandToJavaScript.setValueOrBinding(_dtValue);
+        return m_dtSendCommandToJavaScript.parmValue();
+    }
+</pre>
+<p>
+    4. The NAMNavigationMenuCtrl class should now look like this:
+</p>
+<pre>[FormControlAttribute("NAMNavigationMenuCtrl","",classstr(NAMNavigationMenuCtrlBuild))]
+class NAMNavigationMenuCtrl extends FormTemplateContainerControl
+{
+    private FormProperty m_dtSendCommandToJavaScript;
+    protected void new(FormBuildControl _build, FormRun _formRun)
+    {
+        super(_build, _formRun);
+        this.setResourceBundleName("/resources/html/NAMNavigationMenuCtrl");
+        m_dtSendCommandToJavaScript = this.addProperty(methodstr(NAMNavigationMenuCtrl, SendCommandToJavaScript), Types::UtcDateTime);
+    }
+    [FormPropertyAttribute(FormPropertyKind::Value, "SendCommandToJavaScript")]
+    public utcdatetime SendCommandToJavaScript(utcdatetime _dtValue = m_dtSendCommandToJavaScript.parmValue())
+    {
+        _dtValue = DateTimeUtil::getSystemDateTime();
+        m_dtSendCommandToJavaScript.setValueOrBinding(_dtValue);
+        return m_dtSendCommandToJavaScript.parmValue();
+    }
+}
+</pre>
+<p>
+    5. In the JavaScript resource file add this code:
+</p>
+<pre>        var m_bSendCommandToJavaScript = false;
+        $dyn.observe(this.SendCommandToJavaScript, function (_dtParam) {
+            if (m_bSendCommandToJavaScript == true)
+            {
+                alert("SendCommandToJavaScript Invoked");
+            }
+            m_bSendCommandToJavaScript = true;         
+        });
+</pre>
+<p>
+    6. So that the JavaScript resource file will end up looking like this:
+</p>
+<pre>(function () {
+    'use strict';
+    $dyn.ui.defaults.NAMNavigationMenuCtrl = {};
+    $dyn.controls.NAMNavigationMenuCtrl = function (data, element) {
+        var self = this;
+        $dyn.ui.Control.apply(self, arguments);
+        $dyn.ui.applyDefaults(self, data, $dyn.ui.defaults.NAMNavigationMenuCtrl);
+        $(element).css("background-color", "yellow");
+        var m_bSendCommandToJavaScript = false;
+        $dyn.observe(this.SendCommandToJavaScript, function (_dtParam) {
+            if (m_bSendCommandToJavaScript == true)
+            {
+                alert("SendCommandToJavaScript Invoked");
+            }
+            m_bSendCommandToJavaScript = true;         
+        });
+    }
+    $dyn.controls.NAMNavigationMenuCtrl.prototype = $dyn.extendPrototype($dyn.ui.Control.prototype, {});
+})();
+</pre>
+<p>
+    7. In the NATForm1 form set the NAMNavigationMenuCtrl1 to Auto Declaration = yes.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0220.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    8. Create a button control in NATForm1 and set the text to "Click Me".
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0230.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    9. Override the clicked event and add this line of code:
+</p>
+<pre>NAMNavigationMenuCtrl1.SendCommandToJavaScript();
+</pre>
+<p>
+    10. The NATForm1 class should now look like this:
+</p>
+<pre>[Form]
+public class NATForm1 extends FormRun
+{
+    [Control("Button")]
+    class FormButtonControl1
+    {
+        /// &lt;summary&gt;
+        ///
+        /// &lt;/summary&gt;
+        public void clicked()
+        {
+            NAMNavigationMenuCtrl1.SendCommandToJavaScript();
+            super();
+        }
+    }
+}
+</pre>
+<p>
+    11. Press F5 to start debugging (or Debug -&gt; Start Debugging). Every time you click on the "Click Me" button you will get a "SendCommandToJavaScript Invoked" message box.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0240.PNG" alt="" unselectable="on"><br>
+</p>
+<p>
+    In JavaScript the this.SendCommandToJavaScript variable is created because the "SendCommandToJavaScript" getter/setter in the X++ runtime class is exposed (public). The naming of the variable in JavaScript depends on the FormPropertyAttribute's second parameter. If you were to change the getter/setter attribute to this:
+</p>
+<pre>[FormPropertyAttribute(FormPropertyKind::Value, "SendCommandToJavaScriptAAAA")]
+</pre>
+<p>
+    You would have to change the variable name in JavaScript to this.SendCommandToJavaScriptAAAA.
+</p>
+<p>
+    The framework's Interaction Service automatically synchronizes the JavaScript variables with the X++ runtime class properties with no intervention whatsoever.
+</p>
+<p>
+    The Extensible Control framework also follows what is called an observable pattern and that's what this JavaScript code is all about:
+</p>
+<pre>        $dyn.observe(this.SendCommandToJavaScript, function (_dtParam) {
+        …
+        });
+</pre>
+<p>
+    JavaScript reacts to the changes of the value of the this.SendCommandToJavaScript variable and executes this code:
+</p>
+<pre>            if (m_bSendCommandToJavaScript == true)
+            {
+                alert("SendCommandToJavaScript Invoked");
+            }
+            m_bSendCommandToJavaScript = true;
+</pre>
+<p>
+    Only when the this.SendCommandToJavaScript value changes. So now you're probably wondering what's the purpose of the m_bSendCommandToJavaScript variable. Its purpose is to prevent the code from firing when the control is being initialized. The value of this.SendCommandToJavaScript variable will inevitably change from nothing to something when being initialized. We only need to display the message box when the user clicks the button and not when the form is loading. You can try removing the variable and observing the effect.
+</p>
+<p>
+    And that finally takes us to the getter/setter and why we're using utcdatetime.
+</p>
+<pre>    public utcdatetime SendCommandToJavaScript(utcdatetime _dtValue = m_dtSendCommandToJavaScript.parmValue())
+    {
+        _dtValue = DateTimeUtil::getSystemDateTime();
+        m_dtSendCommandToJavaScript.setValueOrBinding(_dtValue);
+        return m_dtSendCommandToJavaScript.parmValue();
+    }
+</pre>
+<p>
+    Every time this getter/setter is called the system date/time will inevitably change and the observable in JavaScript will be triggered.
+</p>
+<p>
+    This is not the intended use of observable properties. But they are useful when we want to trigger an event from X++. We will now go into the original intended usage of observable properties.
+</p>
+<p>
+    In NATForm1 we want to have a FormMenuButtonControl to allow the user to change the background color of the navigation menu control.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0250.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    1. If you want to avoid having unnecessary code erase the FormProperty, the FormProperty initialization and the getter/setter from the X++ runtime class from the previous demonstration. Also erase the observable function from JavaScript and the "Click Me" button in the form.
+</p>
+<p>
+    2. Erase the following line from the htm resource file:
+</p>
+<pre>&lt;p&gt;This is the NAMNavigationMenuCtrl&lt;/p&gt;
+</pre>
+<p>
+    3. Erase this line in the JavaScript resource:
+</p>
+<pre>$(element).css("background-color", "yellow");
+</pre>
+<p>
+    4. And replace it with this:
+</p>
+<pre>$(element).css("border", "1px solid black");
+$(element).css("position", "relative");
+</pre>
+<p>
+    5. Create this class level variable in the X++ runtime class:
+</p>
+<pre>private FormProperty m_iBackgroundColor;
+</pre>
+<p>
+    6. Initialize the FormProperty variable in the X++ runtime class constructor:
+</p>
+<pre>m_iBackgroundColor = this.addProperty(methodstr(NAMNavigationMenuCtrl, BackgroundColor), Types::Integer);
+</pre>
+<p>
+    7. Add this getter/setter method to the X++ runtime class:
+</p>
+<pre>    [FormPropertyAttribute(FormPropertyKind::Value, "BackgroundColor")]
+    public int BackgroundColor(int _iValue = m_iBackgroundColor.parmValue())
+    {
+        m_iBackgroundColor.setValueOrBinding(_iValue);
+        return m_iBackgroundColor.parmValue();
+    }
+</pre>
+<p>
+    8. Add this function to the JavaScript resource:
+</p>
+<pre>        $dyn.observe(this.BackgroundColor, function (_iParam) {
+            switch (_iParam)
+            {
+                case 0: //Gray
+                    $(element).css("background-color", "#EAEAEA");
+                    break;
+                case 1: //Light blue
+                    $(element).css("background-color", "#C7E0F4");
+                    break;
+                case 2: //Blue
+                    $(element).css("background-color", "#002050");
+                    break;
+                case 3: //Black
+                    $(element).css("background-color", "#000000");
+                    break;
+            }
+        });
+</pre>
+<p>
+    9. Open NATForm1, create an Action Pane Control, a Button Group, a Menu Button and four Button controls:
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0260.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    10. For the Menu Button control set the text property to "Background color".
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0270.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    11. For the Button controls set the Text property to "Gray", "Light blue", "Blue" and "Black" beginning from the top and going downwards.
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0280.PNG" alt="" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    12. Override the clicked event for the four button controls and include the following code, beginning at 0 for grey and ending at 3 for black (1 for light blue and 2 for blue):
+</p>
+<pre>        public void clicked()
+        {
+            NAMNavigationMenuCtrl1.BackgroundColor(0);
+            super();
+        }
+</pre>
+<p>
+    13. Press F5 or Debug -&gt; Start Debugging and using the "Background color" menu change the background color of the control.
+</p>
+<p>
+	<b>Loading Data into The Control Using JSON</b>
+</p>
+<p>
+    Properties can be used to pass scalar variables of data between X++ and the control. But what if you need an array or a matrix (table)? In the Navigation Menu Control the requirement is that for each tile the X &amp; Y position, the size, the caption, the display menu item be stored in a table and then passed at runtime. For the purposes of this tutorial we won't actually use a table, but we will pretend that the data came from a table.
+</p>
+<p>
+    To pass information from JavaScript to X++ and back Extensible Controls use JSON. JSON is short for JavaScript Object Notation and it can be thought of as a lightweight version of XML. Dynamics 365 for Finance and Operations has its own JSON serializer inside the class FormJsonSerializer.
+</p>
+<p>
+    So that we can easily serialize to JSON we have to create two new classes and both are extensions of FormDataContract. The first one is NAMTiles which has a method of type List and can hold several objects of type NAMTile which is our second class. We create several NAMTile objects, group them together in NAMTiles and with a single line of X++ code we serialize and get our JSON string which we then send back over the wire. When it reaches the JavaScript we deserialize with a single line of JS code and start building the tiles inside the control.
+</p>
+<p>
+    1. Create a class called NAMTile. This class represents one tile. Include the following code inside this class:
+</p>
+<pre>[DataContractAttribute]
+class NAMTile extends FormDataContract
+{
+    FormProperty m_iTop;
+    FormProperty m_iLeft;
+    FormProperty m_iTileType;
+    FormProperty m_sCaption;
+    FormProperty m_sMenu;
+    public void new()
+    {
+        super();
+        m_iTop = this.properties().addProperty(methodStr(NAMTile, Top), Types::Integer);
+        m_iLeft = this.properties().addProperty(methodStr(NAMTile, Left), Types::Integer);
+        m_iTileType = this.properties().addProperty(methodStr(NAMTile, TileType), Types::Integer);
+        m_sCaption = this.properties().addProperty(methodStr(NAMTile, Caption), Types::String);
+        m_sMenu = this.properties().addProperty(methodStr(NAMTile, Menu), Types::String);
+    }
+    [DataMemberAttribute("Top")]
+    public int Top(int _value = m_iTop.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_iTop.parmValue(_value);
+        }
+        return _value;
+    }
+    [DataMemberAttribute("Left")]
+    public int Left(int _value = m_iLeft.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_iLeft.parmValue(_value);
+        }
+        return _value;
+    }
+    [DataMemberAttribute("TileType")]
+    public int TileType(int _value = m_iTileType.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_iTileType.parmValue(_value);
+        }
+        return _value;
+    }
+    [DataMemberAttribute("Caption")]
+    public str Caption(str _value = m_sCaption.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_sCaption.parmValue(_value);
+        }
+        return _value;
+    }
+    [DataMemberAttribute("Menu")]
+    public str Menu(str _value = m_sMenu.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_sMenu.parmValue(_value);
+        }
+        return _value;
+    }
+}
+</pre>
+<p>
+    2. Create a class called NAMTiles. This class represents a collection of tiles. Include the following code inside this class:
+</p>
+<pre>[DataContractAttribute]
+class NAMTiles extends FormDataContract
+{
+    FormProperty m_oTileList;
+    public void new()
+    {
+        super();
+        m_oTileList = this.properties().addProperty(methodStr(NAMTiles, TileList), Types::Class);
+        m_oTileList.parmValue(new List(Types::Class));
+    }
+    [DataMemberAttribute('TileList'), DataCollectionAttribute(Types::Class, classStr(NAMTile))]
+    public List TileList(List _value = m_oTileList.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_oTileList.parmValue(_value);
+        }
+        return _value;
+    }
+}
+</pre>
+<p>
+    3. Create a method in the X++ runtime class. This method will be called by JavaScript and will return the list of tiles back to JavaScript in JSON format. It does not have any parameters but methods can have parameters of type str, int, etc.
+</p>
+<pre>    [FormCommandAttribute("GetTiles")]
+    public str GetTiles()
+    {
+        str sReturn;
+        sReturn = FormJsonSerializer::serializeClass(m_oTiles);
+        print "sReturn: ", sReturn;
+        return sReturn;
+    }
+</pre>
+<p>
+    4. Modify the init method of the NATForm1 form. Data is hard coded but it could be modified to load from a table.
+</p>
+<pre>    public void init()
+    {
+        super();
+        NAMTile oTile;
+        int iLeft = 50;
+        int iSpacing = 7;
+        int iBigWidth = 182;
+        int iSmallWidth = 80;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(2);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS336236')));
+        oTile.Menu("VendTableListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        iLeft = iLeft + iBigWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(3);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS117453')));
+        oTile.Menu("VendTableHoldListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(4);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS117454')));
+        oTile.Menu("VendTablePastDueListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(3);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS191281')));
+        oTile.Menu("VendTableDiverseListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(4);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS132272')));
+        oTile.Menu("VendExceptionGroup");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(3);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS10022')));
+        oTile.Menu("VendGroup");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(4);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS114469')));
+        oTile.Menu("VendPriceToleranceGroup");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        //Purchase orders
+        iLeft = 50;
+        oTile = new NAMTile();
+        oTile.Top(137);
+        oTile.Left(iLeft);
+        oTile.TileType(1);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS336224')));
+        oTile.Menu("PurchTableListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        iLeft = iLeft + iBigWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(137);
+        oTile.Left(iLeft);
+        oTile.TileType(4);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS302184')));
+        oTile.Menu("PurchTableListPageAssignedToMe");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(137);
+        oTile.Left(iLeft);
+        oTile.TileType(3);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS120064')));
+        oTile.Menu("PurchTableReceivedNotInvoicedListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(137);
+        oTile.Left(iLeft);
+        oTile.TileType(4);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@AccountsPayable:PurchaseAgreements')));
+        oTile.Menu("PurchAgreementListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(137);
+        oTile.Left(iLeft);
+        oTile.TileType(3);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@GLS109233')));
+        oTile.Menu("PlSADTable");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(137);
+        oTile.Left(iLeft);
+        oTile.TileType(4);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@AccountsPayable:OpenPrepayments')));
+        oTile.Menu("PurchPrepayOpen");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+    }
+</pre>
+<p>
+    5. Add the following code to JavaScript after the $dyn.observe function. The m_AddTilesToControl function is responsible for adding the Tiles to the control as soon as GetTiles returns. This function gets a JSON string from GetTiles in X++. The $dyn.callFunction line is responsible for calling the X++ GetTiles method in the X++ runtime class, passing the parameters (empty in this case) and setting the callback function (m_AddTilesToControl).
+</p>
+<pre>        self.m_AddTilesToControl = function (_sJSON)
+        {
+            var oTiles = $.parseJSON(_sJSON, true);
+            var i = 0;
+            for (i = 0; i &lt;= oTiles.TileList.length - 1; i++)
+            {
+                var oTile = oTiles.TileList[i];
+                var sClass = "tile-big-dark";
+                var sSpanClass = "tile-text-big";
+                switch(oTile.TileType)
+                {
+                    case 1:
+                        sClass = "tile-big-dark";
+                        sSpanClass = "tile-text-big";
+                        break;
+                    case 2:
+                        sClass = "tile-big-light";
+                        sSpanClass = "tile-text-big";
+                        break;
+                    case 3:
+                        sClass = "tile-small-dark";
+                        sSpanClass = "tile-text-small";
+                        break;
+                    case 4:
+                        sClass = "tile-small-light";
+                        sSpanClass = "tile-text-small";
+                        break;
+                }
+                $(element).append("&lt;div class='" + sClass + "' style='left:" + oTile.Left.toString() + "px;top:" + oTile.Top.toString() + "px;'&gt;&lt;span class='" + sSpanClass + "'&gt;" + oTile.Caption + "&lt;/span&gt;&lt;/div&gt;");
+                console.log("passing");
+            }
+        }
+        var oParams = {};
+        $dyn.callFunction(self.GetTiles, self, oParams, self.m_AddTilesToControl);
+</pre>
+<p>
+    6. Include these style definitions in the NAMNavigationMenuCtrl.css file:
+</p>
+<pre>.tile-big-dark {
+    width: 182px;
+    height: 80.5px;
+    position: absolute;
+    background-color: #002050;
+}
+.tile-big-light {
+    width: 182px;
+    height: 80.5px;
+    position: absolute;
+    background-color: #0d62aa;
+}
+.tile-small-dark {
+    width: 80.5px;
+    height: 80.5px;
+    position: absolute;
+    background-color: #002050;
+}
+.tile-small-light {
+    width: 80.5px;
+    height: 80.5px;
+    position: absolute;
+    background-color: #0d62aa;
+}
+.tile-text-big {
+    color: #fff;
+    max-width: 180.5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font: normal normal 300 12px/14px 'Segoe UI',tahoma,sans-serif;
+    max-height: 35px;
+    line-height: 14.1px;
+    overflow: hidden;
+    margin: 7px 0 2px 0;
+    padding: 7px;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.tile-text-small {
+    color: #fff;
+    max-width: 78.5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font: normal normal 300 12px/14px 'Segoe UI',tahoma,sans-serif;
+    max-height: 35px;
+    line-height: 14.1px;
+    overflow: hidden;
+    margin: 7px 0 2px 0;
+    padding: 7px;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+</pre>
+<p>
+    7. Press F5 to debug or Debug -&gt; Start Debugging. This is now the new appearance of the control:
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/0290.PNG" alt="" unselectable="on"><br>
+</p>
+<p>
+	<b>Sending Commands From JavaScript to X++</b>
+</p>
+<p>
+    The final part of this tutorial will show you how to invoke actions in X++ code triggered by user actions in the control. In the Navigation Menu control whenever a user clicks on a tile the form that the tile represents will open.
+</p>
+<p>
+    1. Create a global object outside the main JavaScript function. The reason we're creating it outside is because it will contain the click event handler that will be called by the tiles and has to be outside of the scope of the main function.
+</p>
+<pre>GlobalObj = {};
+(function () {
+…
+})();
+</pre>
+<p>
+    2. Create this JavaScript function immediately after the $dyn.observe function. This function will handle the onclick event from any tile and call the OpenForm method on the X++ runtime class. It can be triggered by the tile itself or by the child span object, so it first checks if the object has an id, if it does not then it is a span object and we need to reference the parent object instead.
+</p>
+<pre>        GlobalObj.m_OnClick = function ()
+        {
+            var oSource = event.srcElement;
+            if (oSource.id == "") {
+                oSource = oSource.parentElement;
+            }
+            var oParams = { _sMenu: oSource.id };
+            $dyn.callFunction(self.OpenForm, self, oParams);
+        }
+</pre>
+<p>
+    3. Modify the append method in JavaScript to make the name of the display menu the id for the div and to create the onclick method handler.
+</p>
+<pre>$(element).append("&lt;div id='" + oTile.Menu + "' onclick='GlobalObj.m_OnClick();' class='" + sClass + "' style='left:" + oTile.Left.toString() + "px;top:" + oTile.Top.toString() + "px;'&gt;&lt;span class='" + sSpanClass + "'&gt;" + oTile.Caption + "&lt;/span&gt;&lt;/div&gt;");
+</pre>
+<p>
+    4. Create this method in the X++ runtime class:
+</p>
+<pre>    [FormCommandAttribute("OpenForm")]
+    public void OpenForm(str _sMenu)
+    {
+        Args args;
+        args = new Args();
+        args.caller(this);
+        new MenuFunction(_sMenu, MenuItemType::Display).run(args);
+    }
+</pre>
+<p>
+    5. Press F5 or Debug -&gt; Start Debugging, click on any tile and the associated form will be opened.
+</p>
+<p>
+	<b>Additional Notes</b>
+</p>
+<p>
+    1. Although it isn't demonstrated in this tutorial, it is possible to initiate a call from X++ like in the SendCommandToJavaScript example, and then have the JavaScript execute a $dyn.callFunction in the $dyn.observe function and have the control receive JSON data from the X++ runtime class.
+</p>
+<p>
+    2. Sometimes when calling the $dyn.callFunction method the call will not execute:
+</p>
+<p>
+	<img class="expandableimage" src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/1000.png" alt="Call will not execute during an intreaction" unselectable="on" style="width:100%;max-width:300px"><br>
+</p>
+<p>
+    Because the framework is in an interaction. This generally happens when $dyn.callFunction calls are deeply nested in code. The framework will however alert you via the browser's console. When debugging it is always important to monitor the browser's console (you can do this by pressing the F12 key in most browsers). In those cases you must "yield" the JavaScript code. When you "yield" a call you do not call the function directly, you call it via window.setTimeout and you convert a synchronous call into an asynchronous one and the call will then execute when the framework is ready. This is a simple example:
+</p>
+<pre>        m_YieldCallFunction = function () {
+            var oParams = { };
+            $dyn.callFunction(self.SomeMethod, self, oParams);
+        }
+        window.setTimeout(m_YieldCallFunction, 0);
+</pre>
+<p>
+    This article has a more thorough explanation of these two concepts:
+</p>
+<p>
+	<a href="http://www.bootes.co/EN/Articles/Dynamics-365-for-Finance-and-Operations-Extensible-Controls-Server-Side-to-Client-Side-and-Back.aspx">Dynamics 365 for Finance and Operations Extensible Controls: Server Side to Client Side and Back.</a><span></span><br>
+</p>
+<p>
+	<br>
+</p>
+<p>
+	<b>Appendix A - NAMNavigationMenuCtrl Final Code</b>
+</p>
+<pre>[FormControlAttribute("NAMNavigationMenuCtrl","",classstr(NAMNavigationMenuCtrlBuild))]
+class NAMNavigationMenuCtrl extends FormTemplateContainerControl
+{
+    private FormProperty m_iBackgroundColor;
+    private NAMTiles m_oTiles;
+    protected void new(FormBuildControl _build, FormRun _formRun)
+    {
+        super(_build, _formRun);
+        this.setResourceBundleName("/resources/html/NAMNavigationMenuCtrl");
+        m_iBackgroundColor = this.addProperty(methodstr(NAMNavigationMenuCtrl, BackgroundColor), Types::Integer);
+        m_oTiles = new NAMTiles();
+    }
+    [FormPropertyAttribute(FormPropertyKind::Value, "BackgroundColor")]
+    public int BackgroundColor(int _iValue = m_iBackgroundColor.parmValue())
+    {
+        m_iBackgroundColor.setValueOrBinding(_iValue);
+        return m_iBackgroundColor.parmValue();
+    }
+    public NAMTiles Tiles()
+    {
+        return m_oTiles;
+    }
+    [FormCommandAttribute("GetTiles")]
+    public str GetTiles()
+    {
+        str sReturn;
+        sReturn = FormJsonSerializer::serializeClass(m_oTiles);
+        print "sReturn: ", sReturn;
+        return sReturn;
+    }
+    [FormCommandAttribute("OpenForm")]
+    public void OpenForm(str _sMenu)
+    {
+        Args args;
+        args = new Args();
+        args.caller(this);
+        new MenuFunction(_sMenu, MenuItemType::Display).run(args);
+    }
+}
+</pre>
+<p>
+	<b>Appendix B - NAMNavigationMenuCtrlBuild Final Code</b>
+</p>
+<pre>[FormDesignControlAttribute("NAMNavigationMenuCtrl")]
+class NAMNavigationMenuCtrlBuild extends FormBuildContainerControl
+{
+}
+</pre>
+<p>
+	<b>Appendix C - NAMNavigationMenuCtrlBuild.css Final Code</b>
+</p>
+<pre>.tile-big-dark {
+    width: 182px;
+    height: 80.5px;
+    position: absolute;
+    background-color: #002050;
+}
+.tile-big-light {
+    width: 182px;
+    height: 80.5px;
+    position: absolute;
+    background-color: #0d62aa;
+}
+.tile-small-dark {
+    width: 80.5px;
+    height: 80.5px;
+    position: absolute;
+    background-color: #002050;
+}
+.tile-small-light {
+    width: 80.5px;
+    height: 80.5px;
+    position: absolute;
+    background-color: #0d62aa;
+}
+.tile-text-big {
+    color: #fff;
+    max-width: 180.5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font: normal normal 300 12px/14px 'Segoe UI',tahoma,sans-serif;
+    max-height: 35px;
+    line-height: 14.1px;
+    overflow: hidden;
+    margin: 7px 0 2px 0;
+    padding: 7px;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.tile-text-small {
+    color: #fff;
+    max-width: 78.5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font: normal normal 300 12px/14px 'Segoe UI',tahoma,sans-serif;
+    max-height: 35px;
+    line-height: 14.1px;
+    overflow: hidden;
+    margin: 7px 0 2px 0;
+    padding: 7px;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+</pre>
+<p>
+	<b>Appendix D - NAMNavigationMenuCtrlBuild.htm Final Code</b>
+</p>
+<pre>&lt;script src="/resources/scripts/NAMNavigationMenuCtrl.js"&gt;&lt;/script&gt;
+&lt;link href="/resources/styles/NAMNavigationMenuCtrl.css" rel="stylesheet" type="text/css" /&gt;
+&lt;div id="NAMNavigationMenuCtrl" data-dyn-bind="sizing: { height: $data.Height, width: $data.Width }, visible: $data.Visible"&gt;
+&lt;/div&gt;
+</pre>
+<p>
+	<b>Appendix E - NAMNavigationMenuCtrlBuild.js Final Code</b>
+</p>
+<pre>GlobalObj = {};
+(function () {
+    'use strict';
+    $dyn.ui.defaults.NAMNavigationMenuCtrl = {};
+    $dyn.controls.NAMNavigationMenuCtrl = function (data, element) {
+        var self = this;
+        $dyn.ui.Control.apply(self, arguments);
+        $dyn.ui.applyDefaults(self, data, $dyn.ui.defaults.NAMNavigationMenuCtrl);
+        $(element).css("border", "1px solid black");
+        $(element).css("position", "relative");
+        $dyn.observe(this.BackgroundColor, function (_iParam) {
+            switch (_iParam)
+            {
+                case 0: //Gray
+                    $(element).css("background-color", "#EAEAEA");
+                    break;
+                case 1: //Light blue
+                    $(element).css("background-color", "#C7E0F4");
+                    break;
+                case 2: //Blue
+                    $(element).css("background-color", "#002050");
+                    break;
+                case 3: //Black
+                    $(element).css("background-color", "#000000");
+                    break;
+            }
+        });
+        GlobalObj.m_OnClick = function ()
+        {
+            var oSource = event.srcElement;
+            if (oSource.id == "") {
+                oSource = oSource.parentElement;
+            }
+            var oParams = { _sMenu: oSource.id };
+            $dyn.callFunction(self.OpenForm, self, oParams);
+        }
+        self.m_AddTilesToControl = function (_sJSON)
+        {
+            var oTiles = $.parseJSON(_sJSON, true);
+            var i = 0;
+            for (i = 0; i &lt;= oTiles.TileList.length - 1; i++)
+            {
+                var oTile = oTiles.TileList[i];
+                var sClass = "tile-big-dark";
+                var sSpanClass = "tile-text-big";
+                switch(oTile.TileType)
+                {
+                    case 1:
+                        sClass = "tile-big-dark";
+                        sSpanClass = "tile-text-big";
+                        break;
+                    case 2:
+                        sClass = "tile-big-light";
+                        sSpanClass = "tile-text-big";
+                        break;
+                    case 3:
+                        sClass = "tile-small-dark";
+                        sSpanClass = "tile-text-small";
+                        break;
+                    case 4:
+                        sClass = "tile-small-light";
+                        sSpanClass = "tile-text-small";
+                        break;
+                }
+                $(element).append("&lt;div id='" + oTile.Menu + "' onclick='GlobalObj.m_OnClick();' class='" + sClass + "' style='left:" + oTile.Left.toString() + "px;top:" + oTile.Top.toString() + "px;'&gt;&lt;span class='" + sSpanClass + "'&gt;" + oTile.Caption + "&lt;/span&gt;&lt;/div&gt;");
+            }
+        }
+        var oParams = {};
+        $dyn.callFunction(self.GetTiles, self, oParams, self.m_AddTilesToControl);
+    }
+    $dyn.controls.NAMNavigationMenuCtrl.prototype = $dyn.extendPrototype($dyn.ui.Control.prototype, {});
+})();
+</pre>
+<p>
+	<b>Appendix F - NAMTile Final Code</b>
+</p>
+<pre>[DataContractAttribute]
+class NAMTile extends FormDataContract
+{
+    FormProperty m_iTop;
+    FormProperty m_iLeft;
+    FormProperty m_iTileType;
+    FormProperty m_sCaption;
+    FormProperty m_sMenu;
+    public void new()
+    {
+        super();
+        m_iTop = this.properties().addProperty(methodStr(NAMTile, Top), Types::Integer);
+        m_iLeft = this.properties().addProperty(methodStr(NAMTile, Left), Types::Integer);
+        m_iTileType = this.properties().addProperty(methodStr(NAMTile, TileType), Types::Integer);
+        m_sCaption = this.properties().addProperty(methodStr(NAMTile, Caption), Types::String);
+        m_sMenu = this.properties().addProperty(methodStr(NAMTile, Menu), Types::String);
+    }
+    [DataMemberAttribute("Top")]
+    public int Top(int _value = m_iTop.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_iTop.parmValue(_value);
+        }
+        return _value;
+    }
+    [DataMemberAttribute("Left")]
+    public int Left(int _value = m_iLeft.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_iLeft.parmValue(_value);
+        }
+        return _value;
+    }
+    [DataMemberAttribute("TileType")]
+    public int TileType(int _value = m_iTileType.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_iTileType.parmValue(_value);
+        }
+        return _value;
+    }
+    [DataMemberAttribute("Caption")]
+    public str Caption(str _value = m_sCaption.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_sCaption.parmValue(_value);
+        }
+        return _value;
+    }
+    [DataMemberAttribute("Menu")]
+    public str Menu(str _value = m_sMenu.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_sMenu.parmValue(_value);
+        }
+        return _value;
+    }
+}
+</pre>
+<p>
+	<b>Appendix G - NAMTiles Final Code</b>
+</p>
+<pre>[DataContractAttribute]
+class NAMTiles extends FormDataContract
+{
+    FormProperty m_oTileList;
+    public void new()
+    {
+        super();
+        m_oTileList = this.properties().addProperty(methodStr(NAMTiles, TileList), Types::Class);
+        m_oTileList.parmValue(new List(Types::Class));
+    }
+    [DataMemberAttribute('TileList'), DataCollectionAttribute(Types::Class, classStr(NAMTile))]
+    public List TileList(List _value = m_oTileList.parmValue())
+    {
+        if(!prmisDefault(_value))
+        {
+            m_oTileList.parmValue(_value);
+        }
+        return _value;
+    }
+}
+</pre>
+<p>
+	<b>Appendix F - All Project Files in .axpp format</b>
+</p>
+<p>
+	<b>
+	<a href="https://atloak1.blob.core.windows.net/article-19/NavigationMenu.zip">Click Here to Download Navigation Menu AXPP files</a><span></span><br>
+	</b>
+</p>
+                    </div>
+                </article>
+                <div class="divider-fullwidth bg-gray-lighter"></div>
+            </div>
+            <div class="col-lg-4 col-xl-3">
+                <div class="blog-aside">
+<div class="blog-aside-item">
+    <form class="rd-search rd-search-classic" action="https://atlantic-oak.com/Home/Search" method="GET">
+        <div class="form-wrap">
+            <label class="form-label rd-input-label" for="rd-search-form-input-1">Search...</label>
+            <input class="form-input" id="rd-search-form-input-1" type="text" name="SearchText" autocomplete="off">
+        </div>
+        <button class="rd-search-submit" type="submit"></button>
+    </form>
+</div>
+
+<div class="blog-aside-item">
+    <h6>Recent posts</h6>
+    <div class="offset-top-30">
+<article class="post post-preview">
+            <a href="https://atlantic-oak.com/Articles/How-to-shrink-the-SQL-transaction-log-on-a-d365-dev-environment">
+                <div class="unit unit-spacing-sm">
+                    <div class="unit-left">
+                        <figure class="post-image">
+                            <img src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/35.jpg" alt="" width="70" height="70">
+                        </figure>
+                    </div>
+                    <div class="unit-body">
+                        <div class="post-header">
+                            <p>How to shrink the SQL transaction log on a d365 dev environment</p>
+                        </div>
+                        <div class="post-meta">
+                            <ul class="list-meta">
+                                <li>
+                                    <time datetime="2016-02-04">18 Oct, 2021</time>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </article>
+<article class="post post-preview">
+            <a href="https://atlantic-oak.com/Articles/SystemOutOfMemoryException-in-SSMS-when-importing-a-bacpac-to-a-D365-development-environment">
+                <div class="unit unit-spacing-sm">
+                    <div class="unit-left">
+                        <figure class="post-image">
+                            <img src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/34.jpg" alt="" width="70" height="70">
+                        </figure>
+                    </div>
+                    <div class="unit-body">
+                        <div class="post-header">
+                            <p>System.OutOfMemoryException in SSMS when importing a bacpac to a D365 development environment</p>
+                        </div>
+                        <div class="post-meta">
+                            <ul class="list-meta">
+                                <li>
+                                    <time datetime="2016-02-04">02 Oct, 2021</time>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </article>
+<article class="post post-preview">
+            <a href="https://atlantic-oak.com/Articles/Connect-tablets-and-other-devices-to-your-Dynamics-365-one-box-instance-local-VHD">
+                <div class="unit unit-spacing-sm">
+                    <div class="unit-left">
+                        <figure class="post-image">
+                            <img src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/32.jpg" alt="" width="70" height="70">
+                        </figure>
+                    </div>
+                    <div class="unit-body">
+                        <div class="post-header">
+                            <p>Connect tablets and other devices to your Dynamics 365 one box instance (local VHD)</p>
+                        </div>
+                        <div class="post-meta">
+                            <ul class="list-meta">
+                                <li>
+                                    <time datetime="2016-02-04">13 Feb, 2019</time>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </article>
+    </div>
+</div>
+
+                </div>
+                <div class="blog-aside">
+                    <h6 style="margin-bottom: 5px;">Dynamics 365 F&amp;O Development Services</h6>
+                    <div class="post-header" style="margin-bottom: 0px;">
+                        <a href="https://atlantic-oak.com/Services/DevelopmentServices"><img src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/Software-Development-Services.jpg"></a>
+                    </div>
+                    <div class="post-header" style="margin-bottom: 90px;">
+                        <p>Does your dev team have too much on their plate? We can help by handling big or small Dynamics 365 customization projects at a competitive rate. <a href="https://atlantic-oak.com/Services/DevelopmentServices">Click here.</a></p>
+                    </div>
+                </div>
+                <div class="blog-aside">
+                    <h6 style="margin-bottom: 5px;">File based integration system for Dynamics 365 Finance and Operations</h6>
+                    <div class="post-header" style="margin-bottom: 0px;">
+                        <a href="https://atlantic-oak.com/Products/D365FO_Document_Exchange_System"><img src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/AODX-round-diagram.png"></a>
+                    </div>
+                    <div class="post-header">
+                        <p>The Atlantic Oak Document Exchange System allows your Dynamics 365 for Finance and Supply Chain Management system to directly pull or push XML or flat files to and from external systems via SFTP, FTP, FTPS, Azure Storage, Azure Files and other file servers. <a href="https://atlantic-oak.com/Products/D365FO_Document_Exchange_System">Click here.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+        <section class="section section-40 section-md-top-75 section-md-bottom-60 bg-cod-gray novi-background">
+            <div class="container text-center text-md-left">
+                <div class="row row-30 align-items-md-center justify-content-lg-center justify-content-xl-start">
+                    <div class="col-lg-11 col-xl-3"><a class="brand" href="https://atlantic-oak.com/"><img src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/atloak_logo_light_gray.svg" width="139" alt="Atlantic Oak"></a></div>
+                    <div class="col-md-7 col-lg-6 col-xl-5">
+                        <div class="wrap-justify">
+                            <address class="contact-info text-left">
+                                <div class="unit unit-horizontal unit-spacing-xs align-items-center justify-content-center unit-sm-left">
+                                    <div class="unit-left"><span class="novi-icon icon icon-md-custom icon-gunsmoke material-icons-place"></span></div>
+                                    <div class="unit-body font-weight-light"><a class="link-light-03 d-inline" href="https://atlantic-oak.com/Articles/Extensible-Controls-in-Dynamics-365-for-Finance-and-Operations-Tutorial#">5 Concourse Parkway<br>Suite 3000<br>Atlanta, Georgia 30328</a></div>
+                                </div>
+                            </address>
+                            <address class="contact-info text-left">
+                                <div class="unit unit-horizontal unit-spacing-xs align-items-center justify-content-center unit-sm-left">
+                                    <div class="unit-left"><span class="novi-icon icon icon-md-custom icon-gunsmoke material-icons-phone"></span></div>
+                                    <div class="unit-body font-weight-light">
+                                        <div class="link-wrap"><a class="link-light-03" href="callto:#">Voice: +1 (470) 582 0912</a></div>
+                                        <div class="link-wrap"><a class="link-light-03" href="callto:#">Fax: +1 (470) 745 6083</a></div>
+                                        <div class="link-wrap"><a class="link-light-03" href="mailto:#">info@atlantic-oak.com</a></div>
+                                    </div>
+                                </div>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-xl-4 text-lg-center">
+                        <ul class="list-inline list-inline-xs">
+                            <li><a class="novi-icon icon icon-sm-custom link-tundora fa-facebook" href="https://www.facebook.com/Atlantic-Oak-100472005598499/"></a></li>
+                            <li><a class="novi-icon icon icon-sm-custom link-tundora fa-twitter" href="https://twitter.com/atlantic_oak"></a></li>
+                            <!--<li><a class="novi-icon icon icon-sm-custom link-tundora fa-google-plus" href="#"></a></li>-->
+                            <li><a class="novi-icon icon icon-sm-custom link-tundora fa-linkedin" href="https://www.linkedin.com/company/atlantic-oak/"></a></li>
+                            <!--<li><a class="novi-icon icon icon-sm-custom link-tundora fa-skype" href="#"></a></li>-->
+                            <!--<li><a class="novi-icon icon icon-sm-custom link-tundora fa-vine" href="#"> </a></li>-->
+                            <!--<li><a class="novi-icon icon icon-sm-custom link-tundora fa-youtube" href="#"></a></li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="page-foot page-foot-default section-35 bg-black novi-background text-center">
+            <div class="container">
+                <p class="rights small"><span>Atlantic Oak LLC</span><span>&nbsp;©&nbsp;</span><span class="copyright-year">2020-2025</span><span>All Rights Reserved.</span><br class="d-md-none"><a class="link-primary" href="https://atlantic-oak.com/TermsAndConditions">Terms and Conditions, </a><a class="link-primary" href="https://atlantic-oak.com/PrivacyPolicy">Privacy Policy</a><span>and</span><a class="link-primary" href="https://atlantic-oak.com/Copyright">Copyright</a><span>.</span></p>
+            </div>
+        </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__cent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./Extensible Controls in Dynamics 365 for Finance and Operations (Tutorial)_files/maintheme"></script>
+
+
+    
+
+    
+
+
+    <div id="expImageModal1" class="expimagemodal">
+        <span id="expimagemodalclose1" class="expimagemodalclose">×</span>
+        <img class="expimagemodal-content" id="expimagemodalimage">
+        <div id="expimagemodalcaption"></div>
+    </div>
+
+    <script>
+    var images = document.getElementsByClassName('expandableimage');
+    for (var i = 0; i < images.length; i++) {
+        var img = images[i];
+        // and attach our click listener for this image.
+        img.onclick = function (evt) {
+            var modal = document.getElementById('expImageModal1');
+            var modalImg = document.getElementById("expimagemodalimage");
+            var captionText = document.getElementById("expimagemodalcaption");
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+    }
+
+    var span = document.getElementById("expimagemodalclose1");
+    span.onclick = function () {
+        var modal = document.getElementById('expImageModal1');
+        modal.style.display = "none";
+    }
+    </script>
+
+
+
+
+
+<a href="https://atlantic-oak.com/Articles/Extensible-Controls-in-Dynamics-365-for-Finance-and-Operations-Tutorial#" id="ui-to-top" class="ui-to-top fa fa-angle-up active"></a></body></html>

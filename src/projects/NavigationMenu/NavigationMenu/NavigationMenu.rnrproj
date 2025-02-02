@@ -46,6 +46,16 @@
       <Name>NAMNavigationMenuCtrlBuild</Name>
       <Link>Classes\NAMNavigationMenuCtrlBuild</Link>
     </Content>
+    <Content Include="AxClass\NAMTile">
+      <SubType>Content</SubType>
+      <Name>NAMTile</Name>
+      <Link>Classes\NAMTile</Link>
+    </Content>
+    <Content Include="AxClass\NAMTiles">
+      <SubType>Content</SubType>
+      <Name>NAMTiles</Name>
+      <Link>Classes\NAMTiles</Link>
+    </Content>
     <Content Include="AxResource\NAMNavigationMenuCtrlCSS">
       <SubType>Content</SubType>
       <Name>NAMNavigationMenuCtrlCSS</Name>
