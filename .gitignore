@@ -15,3 +15,7 @@
 /src/projects/NavigationMenu/.vs/NavigationMenu
 /src/projects/NavigationMenu/NavigationMenu/obj/Debug
 /src/projects/NavigationMenu/NavigationMenuTest/obj/Debug
+/src/models/NavMenu/BuildModelResult.log
+/src/models/NavMenu/BuildModelResult.xml
+/src/models/NavMenuTest/BuildModelResult.log
+/src/models/NavMenuTest/BuildModelResult.xml

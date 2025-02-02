@@ -19,7 +19,7 @@ public class NAMNavigationMenuCtrl extends FormTemplateContainerControl
         super(_build, _formRun);
         this.setResourceBundleName("/resources/html/NAMNavigationMenuCtrl");
         m_dtSendCommandToJavaScript = this.addProperty(methodstr(NAMNavigationMenuCtrl, SendCommandToJavaScript), 
-                                                       Types::UtcDateTime);
+            Types::UtcDateTime);
     }
 
 ]]></Source>
