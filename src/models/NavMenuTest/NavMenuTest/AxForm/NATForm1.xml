@@ -12,6 +12,138 @@ public class NATForm1 extends FormRun
 }
 ]]></Source>
 			</Method>
+			<Method>
+				<Name>init</Name>
+				<Source><![CDATA[
+    public void init()
+    {
+        super();
+        NAMTile oTile;
+        int iLeft = 50;
+        int iSpacing = 7;
+        int iBigWidth = 182;
+        int iSmallWidth = 80;
+
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(2);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS336236')));
+        oTile.Menu("VendTableListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        
+        iLeft = iLeft + iBigWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(3);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS117453')));
+        oTile.Menu("VendTableHoldListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(4);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS117454')));
+        oTile.Menu("VendTablePastDueListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(3);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS191281')));
+        oTile.Menu("VendTableDiverseListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+ 
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(4);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS132272')));
+        oTile.Menu("VendExceptionGroup");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(3);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS10022')));
+        oTile.Menu("VendGroup");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(50);
+        oTile.Left(iLeft);
+        oTile.TileType(4);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS114469')));
+        oTile.Menu("VendPriceToleranceGroup");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        
+        //Purchase orders
+        iLeft = 50;
+        oTile = new NAMTile();
+        oTile.Top(137);
+        oTile.Left(iLeft);
+        oTile.TileType(1);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS336224')));
+        oTile.Menu("PurchTableListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        
+        iLeft = iLeft + iBigWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(137);
+        oTile.Left(iLeft);
+        oTile.TileType(4);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS302184')));
+        oTile.Menu("PurchTableListPageAssignedToMe");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(137);
+        oTile.Left(iLeft);
+        oTile.TileType(3);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@SYS120064')));
+        oTile.Menu("PurchTableReceivedNotInvoicedListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(137);
+        oTile.Left(iLeft);
+        oTile.TileType(4);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@AccountsPayable:PurchaseAgreements')));
+        oTile.Menu("PurchAgreementListPage");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(137);
+        oTile.Left(iLeft);
+        oTile.TileType(3);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@GLS109233')));
+        oTile.Menu("PlSADTable");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+        
+        iLeft = iLeft + iSmallWidth + iSpacing;
+        oTile = new NAMTile();
+        oTile.Top(137);
+        oTile.Left(iLeft);
+        oTile.TileType(4);
+        oTile.Caption(SysLabel::labelId2String(literalstr('@AccountsPayable:OpenPrepayments')));
+        oTile.Menu("PurchPrepayOpen");
+        NAMNavigationMenuCtrl1.Tiles().TileList().AddEnd(oTile);
+    }
+
+]]></Source>
+			</Method>
 		</Methods>
 		<DataSources xmlns="" />
 		<DataControls xmlns="">
@@ -27,9 +159,68 @@ public class NATForm1 extends FormRun
         /// </summary>
         public void clicked()
         {
+            NAMNavigationMenuCtrl1.BackgroundColor(0);            
             super();
-            
-            NAMNavigationMenuCtrl1.SendCommandToJavaScript();
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+			<Control>
+				<Name>FormButtonControl2</Name>
+				<Type>Button</Type>
+				<Methods>
+					<Method>
+						<Name>clicked</Name>
+						<Source><![CDATA[
+        /// <summary>
+        ///
+        /// </summary>
+        public void clicked()
+        {
+            NAMNavigationMenuCtrl1.BackgroundColor(1);
+            super();
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+			<Control>
+				<Name>FormButtonControl3</Name>
+				<Type>Button</Type>
+				<Methods>
+					<Method>
+						<Name>clicked</Name>
+						<Source><![CDATA[
+        /// <summary>
+        ///
+        /// </summary>
+        public void clicked()
+        {
+            super();
+            NAMNavigationMenuCtrl1.BackgroundColor(2);
+        }
+
+]]></Source>
+					</Method>
+				</Methods>
+			</Control>
+			<Control>
+				<Name>FormButtonControl4</Name>
+				<Type>Button</Type>
+				<Methods>
+					<Method>
+						<Name>clicked</Name>
+						<Source><![CDATA[
+        /// <summary>
+        ///
+        /// </summary>
+        public void clicked()
+        {
+            super();
+            NAMNavigationMenuCtrl1.BackgroundColor(3);
         }
 
 ]]></Source>
@@ -42,6 +233,66 @@ public class NATForm1 extends FormRun
 	<DataSources />
 	<Design>
 		<Controls xmlns="">
+			<AxFormControl xmlns=""
+				i:type="AxFormActionPaneControl">
+				<Name>FormActionPaneControl1</Name>
+				<Type>ActionPane</Type>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl xmlns=""
+						i:type="AxFormButtonGroupControl">
+						<Name>FormButtonGroupControl1</Name>
+						<Type>ButtonGroup</Type>
+						<FormControlExtension
+							i:nil="true" />
+						<Controls>
+							<AxFormControl xmlns=""
+								i:type="AxFormMenuButtonControl">
+								<Name>FormMenuButtonControl1</Name>
+								<Type>MenuButton</Type>
+								<FormControlExtension
+									i:nil="true" />
+								<Controls>
+									<AxFormControl xmlns=""
+										i:type="AxFormButtonControl">
+										<Name>FormButtonControl1</Name>
+										<Type>Button</Type>
+										<FormControlExtension
+											i:nil="true" />
+										<Text>Gray</Text>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormButtonControl">
+										<Name>FormButtonControl2</Name>
+										<Type>Button</Type>
+										<FormControlExtension
+											i:nil="true" />
+										<Text>Light blue</Text>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormButtonControl">
+										<Name>FormButtonControl3</Name>
+										<Type>Button</Type>
+										<FormControlExtension
+											i:nil="true" />
+										<Text>Blue</Text>
+									</AxFormControl>
+									<AxFormControl xmlns=""
+										i:type="AxFormButtonControl">
+										<Name>FormButtonControl4</Name>
+										<Type>Button</Type>
+										<FormControlExtension
+											i:nil="true" />
+										<Text>Black</Text>
+									</AxFormControl>
+								</Controls>
+								<Text>Background color</Text>
+							</AxFormControl>
+						</Controls>
+					</AxFormControl>
+				</Controls>
+			</AxFormControl>
 			<AxFormControl xmlns=""
 				i:type="AxFormContainerControl">
 				<Name>NAMNavigationMenuCtrl1</Name>
@@ -57,14 +308,6 @@ public class NATForm1 extends FormRun
 					<ExtensionProperties />
 				</FormControlExtension>
 				<Controls />
-			</AxFormControl>
-			<AxFormControl xmlns=""
-				i:type="AxFormButtonControl">
-				<Name>FormButtonControl1</Name>
-				<Type>Button</Type>
-				<FormControlExtension
-					i:nil="true" />
-				<Text>Click Me</Text>
 			</AxFormControl>
 		</Controls>
 	</Design>

@@ -1,0 +1,63 @@
+.tile-big-dark {
+    width: 182px;
+    height: 80.5px;
+    position: absolute;
+    background-color: #002050;
+}
+
+.tile-big-light {
+    width: 182px;
+    height: 80.5px;
+    position: absolute;
+    background-color: #0d62aa;
+}
+
+.tile-small-dark {
+    width: 80.5px;
+    height: 80.5px;
+    position: absolute;
+    background-color: #002050;
+}
+
+.tile-small-light {
+    width: 80.5px;
+    height: 80.5px;
+    position: absolute;
+    background-color: #0d62aa;
+}
+
+.tile-text-big {
+    color: #fff;
+    max-width: 180.5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font: normal normal 300 12px/14px 'Segoe UI',tahoma,sans-serif;
+    max-height: 35px;
+    line-height: 14.1px;
+    overflow: hidden;
+    margin: 7px 0 2px 0;
+    padding: 7px;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.tile-text-small {
+    color: #fff;
+    max-width: 78.5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font: normal normal 300 12px/14px 'Segoe UI',tahoma,sans-serif;
+    max-height: 35px;
+    line-height: 14.1px;
+    overflow: hidden;
+    margin: 7px 0 2px 0;
+    padding: 7px;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}

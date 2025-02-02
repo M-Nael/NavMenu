@@ -6,8 +6,9 @@
 [FormControlAttribute("NAMNavigationMenuCtrl","",classstr(NAMNavigationMenuCtrlBuild))]
 public class NAMNavigationMenuCtrl extends FormTemplateContainerControl
 {
-    private FormProperty m_dtSendCommandToJavaScript;
 
+    private FormProperty m_iBackgroundColor;
+    private NAMTiles m_oTiles;
 }
 ]]></Declaration>
 		<Methods>
@@ -18,21 +19,61 @@ public class NAMNavigationMenuCtrl extends FormTemplateContainerControl
     {
         super(_build, _formRun);
         this.setResourceBundleName("/resources/html/NAMNavigationMenuCtrl");
-        m_dtSendCommandToJavaScript = this.addProperty(methodstr(NAMNavigationMenuCtrl, SendCommandToJavaScript), 
-            Types::UtcDateTime);
+
+        m_iBackgroundColor = this.addProperty(methodstr(NAMNavigationMenuCtrl, 
+                                                        BackgroundColor), 
+                                              Types::Integer);
+        m_oTiles = new NAMTiles();
     }
 
 ]]></Source>
 			</Method>
 			<Method>
-				<Name>SendCommandToJavaScript</Name>
+				<Name>Tiles</Name>
 				<Source><![CDATA[
-    [FormPropertyAttribute(FormPropertyKind::Value, "SendCommandToJavaScript")]
-    public utcdatetime SendCommandToJavaScript(utcdatetime _dtValue = m_dtSendCommandToJavaScript.parmValue())
+    public NAMTiles Tiles()
     {
-        _dtValue = DateTimeUtil::getSystemDateTime();
-        m_dtSendCommandToJavaScript.setValueOrBinding(_dtValue);
-        return m_dtSendCommandToJavaScript.parmValue();
+        return m_oTiles;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>BackgroundColor</Name>
+				<Source><![CDATA[
+    [FormPropertyAttribute(FormPropertyKind::Value, "BackgroundColor")]
+    public int BackgroundColor(int _iValue = m_iBackgroundColor.parmValue())
+    {
+        m_iBackgroundColor.setValueOrBinding(_iValue);
+        return m_iBackgroundColor.parmValue();
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>GetTiles</Name>
+				<Source><![CDATA[
+    [FormCommandAttribute("GetTiles")]
+    public str GetTiles()
+    {
+        str sReturn;
+        sReturn = FormJsonSerializer::serializeClass(m_oTiles);
+        print "sReturn: ", sReturn;
+        return sReturn;
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>OpenForm</Name>
+				<Source><![CDATA[
+    [FormCommandAttribute("OpenForm")]
+    public void OpenForm(str _sMenu)
+    {
+        Args args;
+        args = new Args();
+        args.caller(this);
+        new MenuFunction(_sMenu, MenuItemType::Display).run(args);
     }
 
 ]]></Source>
